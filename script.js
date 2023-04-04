@@ -26,7 +26,9 @@ let dateStore = JSON.parse(localStorage.getItem("dateStore") || "[]");
         {
             document.getElementById('error').innerHTML = "Please enter the date";
         }
-
+        // else{
+        //     addSearchToHistory(date);
+        // }
         //store the data from the search date in the local storage.
         let dateList = date;
         dateStore.push(dateList);
