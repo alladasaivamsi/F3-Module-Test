@@ -53,11 +53,13 @@ getCurrentImageOfTheDay();
 //=================================================== getImageOfTheDay Function ======================================================//
 function getImageOfTheDay(dateStore) {
     //fetching the date from api and add some specific data related to apikey and specific date.
+    let dateStore = JSON.parse(localStorage.getItem("dateStore") || "[]");
     fetch(`https://api.nasa.gov/planetary/apod?date=${dateStore}&api_key=${apiKeypoint}`)
     .then((response) => response.json())
     .then((data) => {     
         imageData.innerHTML = 
             `
+                <h3>Searched Date: ${dateStore}</h3>
                 <img src="${data.url}" alt="${data.title}">
                 <h3>${data.title}</h3>
                 <p>${data.explanation}</p>
