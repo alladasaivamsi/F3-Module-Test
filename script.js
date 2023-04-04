@@ -58,7 +58,6 @@ function getImageOfTheDay(dateStore) {
     .then((data) => {     
         imageData.innerHTML = 
             `
-                <h3>Searched Date: ${dateStore}</h3>
                 <img src="${data.url}" alt="${data.title}">
                 <h3>${data.title}</h3>
                 <p>${data.explanation}</p>
